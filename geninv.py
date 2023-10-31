@@ -34,6 +34,7 @@ def Drazin(A):
     return X_D
 
 def MoorePenrose(A):
+    F,G = createFullColumnRank(A),createFullRowRank(A)
     # Calculates the Moore Penrose inverse of A
     X_M = Dagger(G) * (G * Dagger(G)).inv() * (Dagger(F)*F).inv()*Dagger(F)
     return X_M
